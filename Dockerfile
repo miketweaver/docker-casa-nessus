@@ -1,6 +1,11 @@
 FROM centos:7
 
+MAINTAINER Mike Weaver <>
+
+VOLUME ["/opt/nessus"]
+
 ENV NESSUS_VERSION="6.9.2"
+ENV TOKEN=""
 
 RUN set -x \
     && yum update -y \
@@ -10,8 +15,6 @@ RUN set -x \
       "http://downloads.nessus.org/nessus3dl.php?file=Nessus-${NESSUS_VERSION}-es7.x86_64.rpm&licence_accept=yes&t=${TOKEN}" \
     && rpm -ivh /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm \
     && rm /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm /tmp/nessus.html
-
-VOLUME /opt/nessus
 
 EXPOSE 8834
 CMD ["/opt/nessus/sbin/nessus-service"]
