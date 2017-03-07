@@ -1,0 +1,7 @@
+nessus:
+  image: miketweaver/docker-casa-nessus
+  ports:
+    - "8834:8834"
+  volumes:
+    - ./opt/nessus/:/opt/nessus/
+  restart: always
