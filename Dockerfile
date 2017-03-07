@@ -18,4 +18,4 @@ RUN set -x \
     && mv /opt/nessus /opt/install
 
 EXPOSE 8834
-CMD ["start.sh"]
+CMD ["/start.sh"]
