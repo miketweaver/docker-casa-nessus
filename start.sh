@@ -1,8 +1,9 @@
 #!/bin/bash
 
-if [ -d /opt/install/ ]
+if [ -d /opt/nessus/ ]
 then
-  mv /opt/install/ /opt/nessus
+  mv /opt/nessus /nessus
+  ln -s /nessus /opt/nessus
 fi
 
 chown -R $USER /opt/nessus/
