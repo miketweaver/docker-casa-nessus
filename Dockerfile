@@ -4,6 +4,8 @@ MAINTAINER Mike Weaver <>
 
 VOLUME ["/opt/nessus"]
 
+COPY start.sh /start.sh
+
 ENV NESSUS_VERSION="6.9.2"
 ENV TOKEN=""
 
