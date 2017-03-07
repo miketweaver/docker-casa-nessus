@@ -18,5 +18,5 @@ RUN set -x \
     && rm /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm /tmp/nessus.html \
     && chmod +x /start.sh
 
-EXPOSE 8834
+EXPOSE ["8834"]
 CMD ["/start.sh"]
