@@ -15,7 +15,8 @@ RUN set -x \
     && curl -ssL -o /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm \
       "http://downloads.nessus.org/nessus3dl.php?file=Nessus-${NESSUS_VERSION}-es7.x86_64.rpm&licence_accept=yes&t=${TOKEN}" \
     && rpm -ivh /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm \
-    && rm /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm /tmp/nessus.html
+    && rm /tmp/Nessus-${NESSUS_VERSION}-es7.x86_64.rpm /tmp/nessus.html \
+    && chmod +x /start.sh
 
 EXPOSE 8834
 CMD ["/start.sh"]
